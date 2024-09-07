@@ -1,0 +1,16 @@
+services:
+  mysqldb:
+    image: mysql
+    container_name: mysql_prisma_learning
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: topsecret
+      MYSQL_DATABASE: prisma-demo
+      # MYSQL_USER: root
+      MYSQL_PASSWORD: topsecret
+
+volumes:
+  mysql_data:
